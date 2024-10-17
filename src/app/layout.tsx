@@ -6,6 +6,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/lib/providers/next-theme-provider";
 import { DM_Sans } from "next/font/google";
 import clsx from "clsx";
+import AppStateProvider from "@/lib/providers/state-provider";
+import { SupabaseUserProvider } from "@/lib/providers/supabaseUserProvider";
 
 const inter = DM_Sans({ subsets: ["latin"] });
 
@@ -23,7 +25,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={clsx("bg-background", inter.className)}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          {children}
+          <AppStateProvider>
+            <SupabaseUserProvider>{children}</SupabaseUserProvider>
+          </AppStateProvider>
         </ThemeProvider>
       </body>
     </html>

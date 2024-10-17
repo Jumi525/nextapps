@@ -5,7 +5,7 @@ type LayoutProps = {
   params: any;
 };
 
-const Layout = ({ children, params }: LayoutProps) => {
+const Layout = ({ children }: LayoutProps) => {
   return <main className="h-screen flex overflow-hidden">{children}</main>;
 };
 

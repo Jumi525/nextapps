@@ -23,5 +23,5 @@ const migratedb = async () => {
   }
 };
 
-migratedb();
+// migratedb();
 export default db;
